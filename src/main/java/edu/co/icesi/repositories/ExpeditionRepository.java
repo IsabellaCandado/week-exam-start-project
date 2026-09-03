@@ -1,6 +1,7 @@
 package edu.co.icesi.repositories;
 
 import edu.co.icesi.entities.Expedition;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
@@ -14,6 +15,11 @@ public class ExpeditionRepository {
         expeditions = new HashMap<>();
     }
 
+    @PostConstruct
+    public void init() {
+
+    }
+
     public void add(Expedition expedition) {
         expeditions.put(expedition.getId(), expedition);
     }
@@ -22,8 +28,12 @@ public class ExpeditionRepository {
         return expeditions.values();
     }
 
-    public boolean contains(Expedition expedition) {
-        return expeditions.containsKey(expedition.getId());
+    public boolean contains(int id) {
+        return expeditions.containsKey(id);
+    }
+
+    public Expedition get(int id) {
+        return expeditions.get(id);
     }
 
 }
