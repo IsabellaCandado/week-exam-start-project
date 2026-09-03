@@ -17,7 +17,10 @@ public class ExpeditionRepository {
 
     @PostConstruct
     public void init() {
-
+        Expedition expedition1 = new Expedition();
+        expedition1.setId(1);
+        expedition1.setName("Expedition 1");
+        expedition1.
     }
 
     public void add(Expedition expedition) {

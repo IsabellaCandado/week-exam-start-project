@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add Expedition</title>
 </head>
 <body>
 
@@ -75,7 +75,7 @@
     <br>
 
     <div>
-        <label for="leader">Base Camp:</label>
+        <label for="leader">Leader:</label>
         <input
                 type="text"
                 id="leader"
@@ -87,54 +87,15 @@
     <br>
 
     <div>
-        <label for="classType">Class type:</label>
-
-        <select id="classType" name="classType" required>
-
-            <option value="">
-                Select a class type
-            </option>
-
-            <option value="Explorer">
-                Explorer
-            </option>
-
-            <option value="Fighter">
-                Fighter
-            </option>
-
-            <option value="Cargo">
-                Cargo
-            </option>
-
-        </select>
-    </div>
-
-    <br>
-
-    <div>
-        <label for="captain">Captain:</label>
-        <input
-                type="text"
-                id="captain"
-                name="captain"
-                placeholder="Captain"
-                required
-        >
-    </div>
-
-    <br>
-
-    <div>
-        <label for="commissionDate">
-            Date of entry into service:
+        <label for="startDate">
+            Start date:
         </label>
 
         <input
                 type="date"
-                id="commissionDate"
-                name="commissionDate"
-                placeholder="Commission Date"
+                id="startDate"
+                name="startDate"
+                placeholder="Start Date"
                 required
         >
     </div>
@@ -142,24 +103,40 @@
     <br>
 
     <div>
-        <label for="status">Status:</label>
+        <label for="endDate">
+            End date:
+        </label>
 
-        <select id="status" name="status" required>
+        <input
+                type="date"
+                id="endDate"
+                name="endDate"
+                placeholder="End Date"
+                required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="state">State:</label>
+
+        <select id="state" name="state" required>
 
             <option value="">
-                Select a status
+                Select a state
             </option>
 
             <option value="Active">
                 Active
             </option>
 
-            <option value="Docked">
-                Docked
+            <option value="Completed">
+                Completed
             </option>
 
-            <option value="Decommissioned">
-                Decommissioned
+            <option value="Cancelled">
+                Cancelled
             </option>
 
         </select>
@@ -168,7 +145,7 @@
     <br>
 
     <button type="submit">
-        Add Starship
+        Add Expedition
     </button>
 
 </form>

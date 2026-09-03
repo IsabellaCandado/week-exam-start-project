@@ -2,9 +2,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Add Expedition</title>
 </head>
 <body>
+
+
+<h1>Add new Sighting</h1>
+
+<form method="POST" action="/exam1_war/sightings/add">
+
+    <div>
+        <label for="id">ID:</label>
+        <input
+                type="number"
+                id="id"
+                name="id"
+                placeholder="ID"
+                required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="sightingCode">Code:</label>
+        <input
+                type="text"
+                id="sightingCode"
+                name="sightingCode"
+                placeholder="Code - Must be unique"
+                required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="name">Name:</label>
+        <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="description">Description:</label>
+        <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Description"
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="scientificName">Scientific Name:</label>
+        <input
+                type="text"
+                id="scientificName"
+                name="scientificName"
+                placeholder="Scientific Name"
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="sightedAt">
+            Sighted date and time:
+        </label>
+
+        <input
+                type="datetime-local"
+                id="sightedAt"
+                name="sightedAt"
+                placeholder="Sighted date and time"
+                required
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="location">Location:</label>
+        <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Location"
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                placeholder="Quantity"
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="confidenceLevel">Confidence Level:</label>
+        <input
+                type="number"
+                id="confidenceLevel"
+                name="confidenceLevel"
+                placeholder="1 is low 5 is high"
+        >
+    </div>
+
+    <br>
+
+    <div>
+        <label for="expeditionId">Expedition ID:</label>
+        <input
+                type="number"
+                id="expeditionId"
+                name="expeditionId"
+                placeholder="Expedition ID"
+                required
+        >
+    </div>
+
+    <br>
+
+    <button type="submit">
+        Add Sighting
+    </button>
+
+</form>
 
 </body>
 </html>

@@ -1,7 +1,6 @@
 package edu.co.icesi.servlets;
 
 import edu.co.icesi.Application;
-import edu.co.icesi.entities.Expedition;
 import edu.co.icesi.entities.Sighting;
 import edu.co.icesi.services.SightingService;
 import jakarta.servlet.ServletException;
@@ -12,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet
+@WebServlet("/sightings/*")
 public class SightingServlet extends HttpServlet {
 
     private SightingService sightingService;
