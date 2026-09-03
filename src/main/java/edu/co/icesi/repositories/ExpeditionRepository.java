@@ -67,4 +67,8 @@ public class ExpeditionRepository {
         return false;
     }
 
+    public void delete(int id) {
+        expeditions.remove(id);
+    }
+
 }

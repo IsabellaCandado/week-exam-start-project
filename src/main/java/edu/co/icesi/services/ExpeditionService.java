@@ -1,7 +1,9 @@
 package edu.co.icesi.services;
 
 import edu.co.icesi.entities.Expedition;
+import edu.co.icesi.entities.Sighting;
 import edu.co.icesi.repositories.ExpeditionRepository;
+import edu.co.icesi.repositories.SightingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,9 @@ public class ExpeditionService {
 
     @Autowired
     private ExpeditionRepository expeditionRepository;
+
+    @Autowired
+    private SightingRepository sightingRepository;
 
     public Collection<Expedition> getExpeditions() {
         return expeditionRepository.findAll();
@@ -33,5 +38,15 @@ public class ExpeditionService {
         } else {
             return "Expedition already exists.";
         }
+    }
+
+    public String deleteExpedition(int id) {
+        for (Sighting sighting : sightingRepository.findAll()) {
+            if (sighting.getExpeditionId() == id) {
+                return "Cannot delete expedition with id " + id + " because it has sightings asocciated.";
+            }
+        }
+        expeditionRepository.delete(id);
+        return "Expedition deleted.";
     }
 }
