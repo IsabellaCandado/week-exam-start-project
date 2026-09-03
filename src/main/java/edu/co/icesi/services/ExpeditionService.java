@@ -19,7 +19,7 @@ public class ExpeditionService {
 
     public String addExpedition(Expedition expedition) {
 
-        if(!expeditionRepository.contains(expedition.getId())) {
+        if(!expeditionRepository.contains(expedition.getId()) && !expeditionRepository.containsByCode(expedition.getCode())) {
             if(expedition.getName() != null || !expedition.getName().isEmpty()) {
                 if(expedition.getCode().length() >= 5 && expedition.getCode().length() <= 20 ) {
                     expeditionRepository.add(expedition);

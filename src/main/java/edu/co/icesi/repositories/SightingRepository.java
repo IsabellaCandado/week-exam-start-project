@@ -1,12 +1,13 @@
 package edu.co.icesi.repositories;
 
 import edu.co.icesi.entities.Sighting;
-import edu.co.icesi.entities.Sighting;
 import jakarta.annotation.PostConstruct;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 
+@Repository
 public class SightingRepository {
     private HashMap<Integer, Sighting> sightings;
 
@@ -33,5 +34,14 @@ public class SightingRepository {
 
     public Sighting get(int id) {
         return sightings.get(id);
+    }
+
+    public boolean containsByCode(String code) {
+        for (Sighting sighting : sightings.values()) {
+            if (sighting.getSightingCode().equals(code)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

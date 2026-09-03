@@ -36,4 +36,13 @@ public class ExpeditionRepository {
         return expeditions.get(id);
     }
 
+    public boolean containsByCode(String code) {
+        for (Expedition expedition : expeditions.values()) {
+            if (expedition.getCode().equals(code)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

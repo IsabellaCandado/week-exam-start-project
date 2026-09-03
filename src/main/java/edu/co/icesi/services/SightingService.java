@@ -22,11 +22,16 @@ public class SightingService {
     }
 
     public String addSighting(Sighting sighting) {
-        if(expeditionRepository.contains(sighting.getExpeditionId())) {
-            sightingRepository.add(sighting);
-            return "Sighting added. " + sighting;
+
+        if (!sightingRepository.contains(sighting.getId()) && !sightingRepository.containsByCode(sighting.getSightingCode())) {
+            if(expeditionRepository.contains(sighting.getExpeditionId())) {
+                sightingRepository.add(sighting);
+                return "Sighting added. " + sighting;
+            } else {
+                return "Sighting not added because expedition ID does not exist. ";
+            }
         } else {
-            return "Sighting not added because expedition ID does not exist. ";
+            return "Sighting already exists. ";
         }
     }
 }
